@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Create a Used Car</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"> </link>
+    </h:head>
+    <h:body class="bg-light">
+        <div class="container"> 
+            <div class="col-md-12">
+                <f:view>
+                    <h:form>
+                        <h2 class="bg-info text-white pt-2 pl-2 pr-2 pb-2">Create a used car</h2>           
+                        <h:messages class="alert-danger list-inline"/>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Reference No:" for="id" />
+                            <div class="col-md-7">
+                                <h:inputText id="id" class="form-control" value="#{usedController.usedCar.id}" title="Id" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Car Make:" for="carMake" />
+                            <div class="col-md-7">
+                                <h:inputText id="carMake"  class="form-control"  value="#{usedController.usedCar.carMake}" title="CarMake" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Car Model:" for="carmodel" />
+                            <div class="col-md-7">
+                                <h:inputText id="carmodel" class="form-control" value="#{usedController.usedCar.carmodel}" title="Carmodel" />
+                            </div>
+                        </div> 
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Drive Type:" for="driveType" />
+                            <div class="col-md-7">
+                                <h:inputText id="driveType" class="form-control" value="#{usedController.usedCar.driveType}" title="DriveType" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Body Colour:" for="bodyColour" />
+                            <div class="col-md-7">
+                                <h:inputText id="bodyColour" class="form-control" value="#{usedController.usedCar.bodyColour}" title="BodyColour" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Transmission:" for="transmisssion" />
+                            <div class="col-md-7">
+                                <h:inputText id="transmisssion" class="form-control" value="#{usedController.usedCar.transmission}" title="Transmisssion" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Car Engine:" for="carEngine" />
+                            <div class="col-md-7">
+                                <h:inputText id="carEngine" class="form-control" value="#{usedController.usedCar.carEngine}" title="CarEngine" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel  class="col-md-3 col-form-label" value="Fuel Type:" for="fualType" />
+                            <div class="col-md-7">
+                                <h:inputText id="fualType" class="form-control" value="#{usedController.usedCar.fualType}" title="FualType" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Number Of Doors:" for="numberOfDoors" />
+                            <div class="col-md-7">
+                                <h:inputText id="numberOfDoors" class="form-control" value="#{usedController.usedCar.numberOfDoors}" title="NumberOfDoors" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Number of Seats:" for="numberofSeats" />
+                            <div class="col-md-7">
+                                <h:inputText id="numberofSeats" class="form-control" value="#{usedController.usedCar.numberofSeats}" title="NumberofSeats" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Price:" for="carPrice" />
+                            <div class="col-md-7">
+                                <h:inputText id="carPrice" class="form-control" value="#{usedController.usedCar.carPrice}" title="CarPrice" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Odometer:" for="odometer" />
+                            <div class="col-md-7">
+                                <h:inputText id="odometer" class="form-control" value="#{usedController.usedCar.odometer}" title="Odometer" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Rego No:" for="regoNo" />
+                            <div class="col-md-7">
+                                <h:inputText id="regoNo" class="form-control" value="#{usedController.usedCar.regoNo}" title="RegoNo" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Rego Expiry:" for="regoExpiry" />
+                            <div class="col-md-7">
+                                <h:inputText id="regoExpiry" class="form-control" value="#{usedController.usedCar.regoExpiry}" title="RegoExpiry" />                      
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Service History:" for="serviceHistory" />
+                            <div class="col-md-7">
+                                <h:inputText id="serviceHistory" class="form-control" value="#{usedController.usedCar.serviceHistory}" title="ServiceHistory" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Vehicle Identification Number:" for="vehicalIdentificationNumber" />
+                            <div class="col-md-7">
+                                <h:inputText id="vehicalIdentificationNumber" class="form-control" value="#{usedController.usedCar.vehicalIdentificationNumber}" title="VehicalIdentificationNumber" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <h:outputLabel class="col-md-3 col-form-label" value="Car History:" for="callHistory" />
+                            <div class="col-md-7">
+                                <h:inputText id="callHistory" class="form-control" value="#{usedController.usedCar.carHistory}" title="CallHistory" />
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <h:commandButton class="btn btn-primary" value="Create a Used Car" action="#{usedController.InsertUsedCar()}"></h:commandButton>
+                    </h:form>
+                    <h:form class="mt-4 mb-4">
+                        <h:link class="mr-2" outcome="/usedcar/usedCarList.xhtml" value="The Stock of used cars"/> |
+                        <h:link class="ml-2" outcome="/default.xhtml" value="Main Page"/> 
+                    </h:form>
+                </f:view>
+            </div>
+        </div>
+    </h:body>
+</html>
+

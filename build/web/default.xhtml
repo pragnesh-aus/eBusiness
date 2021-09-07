@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <meta http-equiv="refresh" content=""/>
+        <title>eBusiness</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css"> </link>
+    </head>
+    <body class="bg-light">
+        <div class="container">
+
+            <h2 class="p-3 mb-2 bg-info text-white text-center"> eBusiness : Product, Customer, and Order Management </h2>
+            <div class="col-md-12">
+                <div class="row">
+                    <h4 class="font-weight-bold mt-3 mb-3">BRAND NEW AND USED CARS</h4>
+                    <div class="col-md-12">   
+                        <h:form>
+                            <h:link class="col-md-4" outcome="newcar/createNewCar.xhtml">Create a brand new car</h:link>|
+                            <h:link class="col-md-4" outcome="newcar/newCarList.xhtml">The stock of a brand new cars</h:link>|
+                            <h:link class="col-md-4" outcome="newcar/searchNewCar.xhtml">Search for a brand new car</h:link>
+                        </h:form>
+                    </div>
+                    <div class="col-md-12">   
+                        <h:form>
+                            <h:link class="col-md-4" outcome="usedcar/createUsedCar.xhtml">Create a used car</h:link>|
+                            <h:link class="col-md-4" outcome="usedcar/usedCarList.xhtml">The stock of used cars</h:link>|
+                            <h:link class="col-md-4" outcome="usedcar/searchUsedCar.xhtml">Search for a used car</h:link>
+                        </h:form>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <h4 class="font-weight-bold mt-3 mb-3">CUSTOMERS</h4>
+                    <div class="col-md-12">
+                        <h:form>
+                            <h:link class="col-md-4" outcome="customer/createCustomer.xhtml">Create a new Customer</h:link>|
+                            <h:link class="col-md-4" outcome="customer/customerList.xhtml">List of Customers</h:link> |
+                            <h:link class="col-md-4" outcome="customer/searchCustomer.xhtml">Search for a Customer</h:link>
+                        </h:form>
+                    </div>                  
+                </div>
+                <div class="row">
+                    <h4 class="font-weight-bold mt-3 mb-3">ORDERS OF CARS</h4>
+                    <div class="col-md-12">
+                        <h:form>
+                            <h:link class="col-md-4" outcome="order/createOrder.xhtml">Create a new Order</h:link>|
+                            <h:link class="col-md-4" outcome="order/orderList.xhtml">List of Orders</h:link> |
+                            <h:link class="col-md-4" outcome="order/searchOrder.xhtml">Search for an Order</h:link>
+                        </h:form>
+                    </div>                  
+                </div>
+            </div>
+            <div class="dropdown-divider"></div>
+        </div>
+        <!--JavaScript at end of body for optimized loading-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="resources/js/bootstrap.min.js"></script>
+    </body>
+</html>
+

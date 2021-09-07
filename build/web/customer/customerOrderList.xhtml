@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Customer :#{orderController.resultCustomer.customerName}</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"> </link>
+    </h:head>
+    <h:body class="bg-light">
+        <div class="container bg-light">
+            <div class="col-md-12">
+                <f:view>
+                    <h2 class="bg-info text-white pt-2 pl-2 pr-2 pb-2">Customer: #{orderController.resultCustomer.customerName}</h2>
+                    <h3>Details</h3>
+                    <p>ID: #{orderController.resultCustomer.id}</p>
+                    <p>Name: #{orderController.resultCustomer.customerName}</p>
+                    <p>Phone Number: #{orderController.resultCustomer.phoneNumber}</p>
+                    <p>Address: #{orderController.resultCustomer.customerAddress}</p>
+                    <p>Email Address: #{orderController.resultCustomer.customerEmailAddress}</p>
+                    <div class="col-md-8">
+                        <h:form>
+                            <h1><h:outputText value="Car Orders"/> (#{orderController.orderCount()})</h1>
+                            <h:dataTable class="table table-hover table-responsive" value="#{orderController.orderList}" var="order">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#"/>
+                                    </f:facet>
+                                    <h:outputText value="#{order.id}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Time Created"/>
+                                    </f:facet>
+                                    <h:outputText value="#{order.creationDate}">
+                                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                    </h:outputText>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Car"/>
+                                    </f:facet>
+                                    <h:outputText value="#{order.car}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Unit Price"/>
+                                    </f:facet>
+                                    <h:outputText value="#{order.carPrice}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Qty"/>
+                                    </f:facet>
+                                    <h:outputText value="#{order.qty}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Total Price"/>
+                                    </f:facet>
+                                    <h:outputText value="$#{order.qty*order.carPrice}"/>
+                                </h:column>
+                            </h:dataTable>
+                        </h:form>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <h:form class="mt-4 mb-4">
+                        <h:link class="mr-2" outcome="/customer/customerList.xhtml" value="Customer List"/> |
+                        <h:link class="mr-2" outcome="/order/orderList.xhtml" value="Car Order List"/> |
+                        <h:link class="ml-2" outcome="/default.xhtml" value="Main Page"/> 
+                    </h:form>
+                </f:view>
+            </div>
+        </div>
+        <hr></hr>
+
+
+    </h:body>
+</html>
+

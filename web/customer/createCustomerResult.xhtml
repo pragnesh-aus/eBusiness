@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>List of Customers</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"> </link>
+    </h:head>
+    <h:body class="bg-light">
+        <div class="container bg-light">
+            <h2 class="bg-info text-white pt-2 pl-2 pr-2 pb-2"> List of Customers</h2>
+            <f:view>
+                <div class="alert alert-success" role="alert">
+                    <p> Successfully created the customer: #{customerController.resultCustomer.customerName} </p>
+                </div>
+                <div class="col-md-6">
+                    <h:form>
+                        <h:dataTable class="table table-hover table-responsive" value="#{customerController.getAllCustomers()}" var="customer">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Name"/>
+                                </f:facet>
+                                <h:outputText value="#{customer.customerName}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Address"/>
+                                </f:facet>
+                                <h:outputText value="#{customer.customerAddress}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Orders"/>
+                                </f:facet>
+                                <h:outputText value="#{customerController.orderCountByCustomerName(customer.customerName)}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Action"/>
+                                </f:facet>
+                                <h:commandLink value="View Details" action="#{orderController.getCustomerOrderDetails(customer)}" styleClass="submit"/>
+                            </h:column>
+                        </h:dataTable>
+                        Total Customers : #{customerController.customerCount()}
+                        <div class="dropdown-divider"></div>
+                        <h:form class="mt-4 mb-4">
+                            <h:link class="mr-2" outcome="/customer/createCustomer.xhtml" value="Create a New Cutomer"/> |
+                            <h:link class="ml-2" outcome="/default.xhtml" value="Main Page"/> 
+                        </h:form>
+                    </h:form>
+                </div>
+            </f:view>
+        </div>
+        <!--JavaScript at end of body for optimized loading-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="../resources/js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+

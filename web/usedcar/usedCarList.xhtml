@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>The stock of used cars</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"> </link>
+    </h:head>
+    <h:body class="bg-light">
+        <div class="container bg-light">
+            <h2 class="bg-info text-white pt-2 pl-2 pr-2 pb-2">The stock of used cars</h2>
+            <f:view>
+                <div class="col-md-6">
+                    <h:form>
+                        <h:dataTable class="table table-hover table-responsive" value="#{usedController.allUsedCars}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Make"/>
+                                </f:facet>
+                                <h:outputText value="#{item.carMake}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Model"/>
+                                </f:facet>
+                                <h:outputText value="#{item.carmodel}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Reference Number"/>
+                                </f:facet>
+                                <h:commandLink value="#{item.id}" action="searchUsedCarList.xhtml" actionListener="#{usedController.getUsedCarByID(item.id)}" styleClass="submit"/>
+                            </h:column>
+                        </h:dataTable>
+
+                        Total Used Car : #{usedController.UsedCarCount()}
+                        <div class="dropdown-divider"></div>
+                        <h:form class="mt-4 mb-4">
+                            <h:link class="mr-2" outcome="/usedcar/createUsedCar.xhtml" value="Create a Used Car"/> |
+                            <h:link class="ml-2" outcome="/default.xhtml" value="Main Page"/> 
+                        </h:form>
+                    </h:form>
+                </div>
+            </f:view>
+        </div>
+    </h:body>
+</html>
+

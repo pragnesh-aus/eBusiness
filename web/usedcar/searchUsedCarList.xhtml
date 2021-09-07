@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Find a brand new Car</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"> </link>
+    </h:head>
+    <h:body class="bg-light">
+        <div class="container bg-light">
+            <h2 class="bg-info text-white pt-2 pl-2 pr-2 pb-2">The found used car</h2>
+            <f:view>  
+                <div class="col-md-12">
+                    <h:form>
+                        <h:dataTable class="table table-hover table-responsive" value="#{usedController.resultUsedCar}" var="usedCar">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Reference No"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.id}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Make"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.carMake}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Model"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.carmodel}"/>
+
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Drive Type"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.driveType}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Body Colour"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.bodyColour}"/>
+                            </h:column>
+
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Transmission"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.transmission}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Engine"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.carEngine}"/>
+                            </h:column>
+
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="FuelType"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.fualType}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Doors"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.numberOfDoors}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Seats"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.numberofSeats}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="No. Of Cars"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.noOfCars}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Odometer"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.odometer}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Rego No"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.regoNo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Rego Expiry"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.regoExpiry}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Service History"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.serviceHistory}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Vehicle Identification Number"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.vehicalIdentificationNumber}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Car History"/>
+                                </f:facet>
+                                <h:outputText value="#{usedCar.carHistory}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Price"/>
+                                </f:facet>
+                                <h:outputText value="$#{usedCar.carPrice}"/>
+                            </h:column>
+                        </h:dataTable>                        
+                    </h:form>
+                </div>                
+                 <h:messages class="list-inline list-inline-item"/>
+                <div class="dropdown-divider"></div>
+                <h:form class="mt-4 mb-4">
+                    <h:link class="mr-2" outcome="/usedcar/createUsedCar.xhtml" value="Create a Used Car"/> |
+                    <h:link class="ml-2" outcome="/default.xhtml" value="Main Page"/> 
+                </h:form>
+            </f:view>
+        </div>
+        <!--JavaScript at end of body for optimized loading-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="../resources/js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+
